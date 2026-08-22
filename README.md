@@ -64,5 +64,20 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Hnry is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Hnry is a New Zealand-founded financial administration and accounting service for sole traders,
+contractors and freelancers, operating in New Zealand, Australia and the United Kingdom. Customers
+are paid into a dedicated Hnry Account; every inbound payment is automatically split, with income
+tax, GST/VAT, ACC levies, Medicare levy and student loan repayments calculated, deducted and paid to
+the revenue authority in real time. Invoicing, expense capture, allocations, reporting, tax filing
+and a Hnry Business Mastercard sit on top of that rail.
+
+- https://hnry.co.nz/
+- https://hnry.com.au/
+- https://hnry.co.uk/
+- https://app.hnry.io/
+
+Hnry's API is real but not publicly documented: the reference at `https://app.hnry.io/api-docs`
+answers HTTP 401 with an HTTP Basic challenge, and the "Developer Platform" page Hnry links from its
+own short domain resolves to a Notion page that is not shared publicly. No OpenAPI, Swagger, GraphQL
+SDL or AsyncAPI document is published at any Hnry-controlled host. The only publicly enumerable
+operations are the eight actions and searches in Hnry's first-party Zapier app.

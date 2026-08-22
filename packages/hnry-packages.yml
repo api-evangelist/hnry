@@ -1,0 +1,50 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  registry.npmjs.org, pypi.org, rubygems.org, crates.io, packagist.org, api.nuget.org,
+  github.com/HnryNZ
+package_count: 0
+official_sdk_count: 0
+note: >-
+  Hnry publishes no client SDK in any public package registry. Searched npm ("hnry" — zero
+  results), PyPI (hnry, hnry-api, hnry-client — all 404), RubyGems, crates.io, Packagist and
+  NuGet on 2026-08-22; the only near-matches on Packagist are unrelated "hry*" vendors. The
+  HnryNZ GitHub organisation has exactly one public repository, and it is internal release
+  tooling rather than a client library. No `SDKs` pointer is emitted in apis.yml, because
+  there is no SDK to point at.
+packages: []
+registries_searched:
+- registry: npm
+  query: https://registry.npmjs.org/-/v1/search?text=hnry
+  results: 0
+- registry: pypi
+  query: https://pypi.org/pypi/hnry/json
+  results: 0
+  status: 404
+- registry: rubygems
+  query: https://rubygems.org/api/v1/search.json?query=hnry
+  results: 0
+- registry: crates.io
+  query: https://crates.io/api/v1/crates?q=hnry
+  results: 0
+- registry: packagist
+  query: https://packagist.org/search.json?q=hnry
+  results: 0
+  note: matches returned were unrelated ("hryvinskyi/*", "henrywhitaker3/*")
+- registry: nuget
+  query: https://azuresearch-usnc.nuget.org/query?q=hnry
+  results: 0
+related_repositories:
+- name: HnryNZ/semver-release-action
+  url: https://github.com/HnryNZ/semver-release-action
+  language: Go
+  license: MIT
+  official: true
+  client_library: false
+  version: null
+  published: null
+  note: >-
+    A GitHub Action that creates SemVer releases from PR labels. First-party and open source, but
+    internal CI tooling — it is not a Hnry API client and is not distributed through a package
+    registry, so there is no registry metadata endpoint to read a version or release date from.
+    Last pushed 2026-05-10 per the GitHub organisation listing.

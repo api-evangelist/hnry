@@ -1,0 +1,41 @@
+generated: '2026-08-22'
+method: searched
+source: https://hnry.co.nz/privacy-and-security/
+trust_center: https://hnry.co.nz/privacy-and-security/
+note: >-
+  Hnry does not run a dedicated trust portal (trust.hnry.co.nz, /trust and /security all 404).
+  Its published security posture lives on a single "Privacy & Security" page linked from the
+  footer and from /legal-documents/, which names one third-party certification explicitly.
+certifications:
+- name: ISO/IEC 27001
+  status: certified
+  scope: Information security management system
+  evidence: >-
+    "We're certified to international security standards (ISO27001) — We're proud to be certified
+    under ISO/IEC 27001, the global standard for information security management."
+  source: https://hnry.co.nz/privacy-and-security/
+  certificate_published: false
+  certificate_note: >-
+    The certification is asserted in prose. No certificate number, certification body, scope
+    statement or audit report is published, and there is no downloadable artifact.
+controls_claimed:
+- strong encryption
+- secure hosting environments
+- strict access controls
+- third-party management
+- SSL/TLS in transit (stated in the privacy policy, section 8 "SECURITY - SSL SECURED")
+pages:
+- url: https://hnry.co.nz/privacy-and-security/
+  status: 200
+  title: Hnry | Privacy & Security
+- url: https://hnry.co.nz/legal-documents/
+  status: 200
+  title: Hnry's Legal Documents
+- url: https://hnry.co.nz/privacy/
+  status: 200
+  title: Privacy Policy
+probes_that_missed:
+- url: https://hnry.co.nz/trust/
+  status: 404
+- url: https://hnry.co.nz/security/
+  status: 404

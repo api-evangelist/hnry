@@ -1,0 +1,70 @@
+generated: '2026-08-22'
+method: searched
+source: https://zapier.com/apps/hnry/integrations
+note: >-
+  Hnry's only publicly enumerable API surface. The Zapier app is first-party (published by Hnry,
+  category Accounting, isBeta false, isPremium false) and each action below is a Zapier-side
+  projection of a real Hnry API operation. This is a marketplace listing, not a contract: no
+  request/response schemas, field types, error codes or endpoint paths are exposed, so the
+  operations are recorded by name and effect only. No Hnry operationIds are asserted, because
+  Hnry publishes none.
+platform: Zapier
+listing:
+  url: https://zapier.com/apps/hnry/integrations
+  status: 200
+  category: Accounting
+  beta: false
+  premium: false
+  external_url: https://hnry.co/
+help_doc:
+  url: https://help.hnry.io/en/articles/5094374-hnry-and-zapier-integration-guide
+  status: 401
+  note: Hnry's own integration guide is not publicly readable.
+triggers: []
+triggers_note: >-
+  The listing exposes no triggers — the integration is write-and-search only, so an agent or Zap
+  cannot subscribe to Hnry events. There is no webhook surface published anywhere.
+actions:
+- name: Create Invoice
+  kind: write
+  entity: Invoice
+- name: Add Item to Existing Invoice
+  kind: write
+  entity: InvoiceItem
+- name: Create Client
+  kind: write
+  entity: Client
+- name: Raise Expense
+  kind: write
+  entity: Expense
+searches:
+- name: Find Invoice
+  kind: search
+  entity: Invoice
+- name: Find or Create Invoice
+  kind: search-or-create
+  entity: Invoice
+- name: Find Client
+  kind: search
+  entity: Client
+- name: Find or Create Client
+  kind: search-or-create
+  entity: Client
+input_fields_observed:
+- Client
+- Invoice
+- Invoice Date
+- Clients for User
+- Invoices for User
+- Expense Type
+entities:
+- Client
+- Invoice
+- InvoiceItem
+- Expense
+reversibility:
+  state: unknown
+  note: >-
+    No cancel/void/delete/credit-note operation is exposed through the Zapier surface, and the
+    underlying reference is gated, so it cannot be established whether an invoice or expense
+    created through the API can be reversed, or within what window. NEVER assume it can.

@@ -1,18 +1,63 @@
 aid: hnry
 name: Hnry
-description: 'Hnry is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Hnry is a New Zealand-founded financial administration and accounting service for sole traders,
+  contractors and freelancers, operating in New Zealand, Australia and the United Kingdom. Customers
+  are issued a dedicated "Hnry Account" bank account; every payment that lands in it is automatically
+  split — income tax, GST/VAT, ACC levies, Medicare levy and student loan repayments are calculated,
+  deducted and paid to the revenue authority in real time, and the remainder is passed straight
+  through to the customer. On top of that payment rail Hnry runs invoicing, invoice chasing, expense
+  capture and review, allocations to savings/investments/charities, business reporting, tax filing
+  and a Hnry Business Mastercard. Pricing is a single usage-based fee of 1% of each inbound payment
+  plus tax, annually capped. The platform is a Rails application at app.hnry.io with a REST API that
+  backs the mobile apps and a public Zapier integration; the API reference at app.hnry.io/api-docs
+  and the "Developer Platform" workspace page are both credential-gated, so no machine-readable
+  contract is published.
+image: https://hnry.co.nz/img/social/opengraph.jpg
 url: https://raw.githubusercontent.com/api-evangelist/hnry/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-22'
 modified: '2026-08-22'
 tags:
-- Company
-apis: []
+- Accounting
+- Tax
+- Payments
+- Invoicing
+- Expense Management
+- Financial Services
+- Sole Traders
+- Payroll
+- Fintech
+- New Zealand
+- Australia
+- United Kingdom
+apis:
+- aid: hnry-platform-api
+  name: Hnry Platform API
+  description: >-
+    The REST API behind the Hnry app. It backs the Hnry iOS/Android clients and the published Hnry
+    Zapier integration, which exposes create/find operations over clients, invoices, invoice line
+    items and expenses. The reference is served by the platform itself at https://app.hnry.io/api-docs
+    but returns HTTP 401 with a WWW-Authenticate: Basic challenge to anonymous callers, and the
+    "Developer Platform" page Hnry links from its own short domain (https://on.hnry.co.nz/api-docs)
+    resolves to a Notion workspace page that is not publicly shared. No OpenAPI, Swagger, GraphQL SDL
+    or AsyncAPI document is published at any Hnry-controlled host.
+  humanURL: https://app.hnry.io/api-docs
+  baseURL: https://app.hnry.io
+  tags:
+  - Accounting
+  - Invoicing
+  - Expenses
+  - Tax
+  properties:
+  - type: Authentication
+    url: authentication/hnry-authentication.yml
+  - type: Integrations
+    url: integrations/hnry-zapier.yml
+  - type: RateLimits
+    url: rate-limits/hnry-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +65,53 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://hnry.co.nz/
+- type: Pricing
+  url: https://hnry.co.nz/pricing/
+- type: SignUp
+  url: https://app.hnry.io/signup/jurisdiction_selection
+- type: TermsOfService
+  url: https://hnry.co.nz/agreement/
+- type: PrivacyPolicy
+  url: https://hnry.co.nz/privacy/
+- type: Support
+  url: https://hnry.co.nz/product/support/
+- type: HelpCenter
+  url: https://help.hnry.io/en/
+- type: Blog
+  url: https://hnry.co.nz/resources/news/
+- type: GitHubOrganization
+  url: https://github.com/HnryNZ
+- type: TrustCenter
+  url: security/hnry-trust-center.yml
+- type: Compliance
+  url: conformance/hnry-conformance.yml
+- type: Conformance
+  url: conformance/hnry-conformance.yml
+- type: DomainSecurity
+  url: security/hnry-domain-security.yml
+- type: Security
+  url: security/hnry-vulnerability-disclosure.yml
+- type: VulnerabilityDisclosure
+  url: security/hnry-vulnerability-disclosure.yml
+- type: SecurityTxt
+  url: well-known/hnry-security.txt
+- type: Plans
+  url: plans/hnry-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/hnry-rate-limits.yml
+- type: Authentication
+  url: authentication/hnry-authentication.yml
+- type: LLMsTxt
+  url: llms/hnry-llms.txt
+- type: Packages
+  url: packages/hnry-packages.yml
+- type: Lifecycle
+  url: lifecycle/hnry-lifecycle.yml
+- type: Integrations
+  url: integrations/hnry-zapier.yml
+x-enrichment:
+  date: '2026-08-22'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1

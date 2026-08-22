@@ -1,0 +1,55 @@
+generated: '2026-08-22'
+method: probed
+source: >-
+  live probes of https://app.hnry.io/api-docs, https://app.hnry.io/oauth/authorize and
+  https://zapier.com/apps/hnry/integrations
+note: >-
+  DERIVED FROM PROBES, NOT FROM PROVIDER DOCUMENTATION. Hnry publishes no public authentication
+  reference: the API reference at app.hnry.io/api-docs is behind HTTP Basic, and the Hnry help
+  centre article that explains connecting Hnry to Zapier also returns 401. Everything below is
+  what was observable anonymously from the live platform plus the published Zapier listing.
+  Nothing here is a quoted Hnry statement about its own auth model, and no scheme names, header
+  names, token formats or scopes are asserted, because none are published.
+observed:
+- surface: API reference
+  url: https://app.hnry.io/api-docs
+  status: 401
+  scheme: HTTP Basic
+  detail: >-
+    Responds `WWW-Authenticate: Basic realm=""` with an empty body. The whole /api-docs/* tree
+    behaves identically (/api-docs/, /api-docs/index.html, /api-docs/swagger.json,
+    /api-docs/openapi.json all 401), so the documentation itself — not just the API — is
+    credential-gated. The same behaviour is present on the UAT host, https://uat.hnry.io/api-docs.
+- surface: OAuth authorization endpoint
+  url: https://app.hnry.io/oauth/authorize
+  status: 302
+  location: https://app.hnry.io/users/sign_in?mode=api
+  detail: >-
+    A live /oauth/authorize route exists and redirects anonymous callers to an API-mode sign-in.
+    The `?mode=api` parameter and the Rails/Doorkeeper-shaped path are consistent with an
+    authorization-code flow, but /oauth/token and /oauth/applications both return 404 anonymously
+    and no client-registration, scope or grant-type documentation is published, so the flow cannot
+    be characterised further without credentials.
+- surface: Zapier integration
+  url: https://zapier.com/apps/hnry/integrations
+  status: 200
+  detail: >-
+    Hnry ships a public, non-beta Zapier app in the Accounting category. A Zapier app requires a
+    working authentication mechanism against the Hnry API, and Hnry's own help centre documents
+    connecting an account, but that article (help.hnry.io/en/articles/5094374) returns 401, so the
+    credential type Zapier collects could not be confirmed from a Hnry-published source.
+oauth:
+  discovery_document: null
+  discovery_probe:
+    url: https://app.hnry.io/.well-known/oauth-authorization-server
+    status: 404
+  scopes_published: false
+mtls: false
+public_signup_for_api_access: false
+public_signup_note: >-
+  There is no developer signup, sandbox key issuance or API-key self-service page. API access is a
+  property of a funded Hnry customer account (https://app.hnry.io/signup/jurisdiction_selection).
+gaps:
+- No public authentication reference — the auth documentation is behind the same wall as the API.
+- No /.well-known/oauth-authorization-server or /.well-known/openid-configuration on any host.
+- No published scopes, token lifetimes, rotation policy or key-prefix convention.

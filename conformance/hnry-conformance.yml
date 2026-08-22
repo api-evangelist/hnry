@@ -1,0 +1,99 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  https://hnry.co.nz/privacy-and-security/, https://hnry.co.uk/llms.txt,
+  https://hnry.co.nz/privacy/, https://hnry.com.au/
+note: >-
+  Hnry's conformance surface is regulatory and organisational, not protocol-level. There is no
+  public machine-readable contract, so no OAuth/OIDC/RFC 9457/pagination/idempotency conformance
+  could be asserted from a spec — every technical row below is recorded as unknown rather than
+  false, because the reference is credential-gated and absence of evidence is not evidence of
+  absence. The regulatory rows are quoted from pages Hnry publishes itself.
+standards:
+- id: iso-27001
+  name: ISO/IEC 27001 Information Security Management
+  conforms: true
+  evidence: >-
+    "We're proud to be certified under ISO/IEC 27001, the global standard for information security
+    management." — https://hnry.co.nz/privacy-and-security/
+- id: mtd
+  name: HMRC Making Tax Digital (MTD for VAT and MTD for Income Tax Self Assessment)
+  conforms: true
+  domain_standard: true
+  evidence: >-
+    "Hnry is fully Making Tax Digital (MTD) compliant... Hnry keeps digital records, sends
+    quarterly submissions to HMRC, and files your Income Tax Self Assessments (ITSA)
+    automatically." — https://hnry.co.uk/llms.txt and https://hnry.co.uk/making-tax-digital/
+  note: >-
+    This is the domain standard for the UK tax-filing market Hnry sells into: MTD mandates
+    digital record keeping and quarterly API submission to HMRC's own Making Tax Digital APIs.
+    A provider that is MTD-recognised integrates with HMRC without a bespoke connector.
+- id: fca-emr-2011
+  name: UK Electronic Money Regulations 2011 (FCA)
+  conforms: true
+  evidence: >-
+    "Hnry operates as a registered agent of Prepay Technologies Ltd (an Electronic Money
+    Institution authorised by the FCA under the Electronic Money Regulations 2011, FRN: 900010)."
+    — https://hnry.co.uk/llms.txt
+  note: Hnry is the agent; the authorised EMI is Prepay Technologies Ltd (FRN 900010).
+- id: nz-privacy-act-2020
+  name: Privacy Act 2020 (New Zealand)
+  conforms: true
+  evidence: >-
+    Named as the governing privacy statute in the Hnry NZ privacy policy definitions section.
+    — https://hnry.co.nz/privacy/
+- id: nz-amlcft-2009
+  name: Anti-Money Laundering and Countering Financing of Terrorism Act 2009 (New Zealand)
+  conforms: true
+  evidence: >-
+    Named as a governing statute in the Hnry NZ privacy policy definitions section.
+    — https://hnry.co.nz/privacy/
+- id: au-professional-standards-legislation
+  name: Australian Professional Standards Legislation scheme
+  conforms: true
+  evidence: >-
+    "Liability limited by a Scheme approved under Professional Standards Legislation." —
+    site-wide footer, https://hnry.com.au/
+- id: pci-dss
+  name: PCI DSS
+  conforms: unknown
+  evidence: >-
+    Hnry issues a Business Mastercard through PrePay Technologies Limited under licence from
+    Mastercard International, but publishes no PCI DSS attestation of its own.
+- id: soc2
+  name: SOC 2
+  conforms: false
+  evidence: No SOC 2 report or claim appears on any Hnry page; the only certification named is ISO/IEC 27001.
+- id: oauth2
+  name: OAuth 2.0
+  conforms: unknown
+  evidence: >-
+    https://app.hnry.io/oauth/authorize exists and 302s to https://app.hnry.io/users/sign_in?mode=api,
+    which is the shape of a Doorkeeper-style authorization endpoint, but /oauth/token and
+    /oauth/applications both 404 anonymously and no OAuth documentation is published.
+- id: openid-connect
+  name: OpenID Connect
+  conforms: unknown
+  evidence: /.well-known/openid-configuration returns 404 on all four Hnry hosts.
+- id: rfc9457
+  name: RFC 9457 Problem Details for HTTP APIs
+  conforms: unknown
+  evidence: No public contract or error reference to read; app.hnry.io/api-docs returns HTTP 401.
+- id: rfc9116
+  name: RFC 9116 security.txt
+  conforms: partial
+  evidence: >-
+    Hnry serves a valid RFC 9116 document with Contact, Expires, Canonical and Policy fields — but
+    from the WEB ROOT (https://app.hnry.io/security.txt and https://uk.hnry.com/security.txt, both
+    200), not from /.well-known/security.txt, which returns 404 on all four hosts. RFC 9116 section 3
+    requires the well-known path; the root location is legacy-compatibility only. hnry.co.nz,
+    hnry.com.au and hnry.co.uk 301 /security.txt to the app hosts. The Policy: URL
+    (https://hnry.notion.site/hnry-responsible-disclosure-guidelines) returns 200 but is not
+    publicly shared, so the linked guidelines are unreadable to the researchers they are for.
+- id: llms-txt
+  name: llms.txt
+  conforms: true
+  evidence: >-
+    https://hnry.co.uk/llms.txt returns HTTP 200 text/plain with a well-formed llms.txt (H1, blockquote
+    summary, "## Key Pages" link list). Published on the UK site only — hnry.co.nz and hnry.com.au
+    both 404.

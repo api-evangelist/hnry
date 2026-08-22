@@ -1,0 +1,23 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  https://app.hnry.io/api-docs (HTTP 401, WWW-Authenticate: Basic) and
+  https://help.hnry.io/en/articles/5094374-hnry-and-zapier-integration-guide (HTTP 401)
+limit_count: 0
+headers: []
+note: >-
+  Hnry publishes no rate limits. The only API reference the platform serves — https://app.hnry.io/api-docs —
+  returns HTTP 401 with a `WWW-Authenticate: Basic realm=""` challenge to anonymous callers, and the
+  Zapier integration guide in the Hnry help centre also returns 401, so neither the documented limits
+  nor the response headers could be read. No unauthenticated endpoint exists to observe RateLimit-*,
+  X-RateLimit-* or Retry-After on a live response. This is an honest zero, measured on 2026-08-22, not
+  an assertion that Hnry applies no limits.
+probes:
+- url: https://app.hnry.io/api-docs
+  status: 401
+  detail: 'WWW-Authenticate: Basic realm=""'
+- url: https://help.hnry.io/en/articles/5094374-hnry-and-zapier-integration-guide
+  status: 401
+- url: https://on.hnry.co.nz/api-docs
+  status: 302
+  detail: redirects to a Notion "Developer Platform" page that is not publicly shared

@@ -1,0 +1,102 @@
+generated: '2026-08-22'
+method: probed
+source: live GET of each /.well-known/ path on every Hnry-controlled host
+note: >-
+  Every /.well-known/ path probed returned 404 on all four Hnry hosts, so NO WellKnown pointer is
+  emitted in apis.yml — a 404 sweep is a measured absence, not a presence. Two real documents were
+  found off the well-known path and both are wired: (1) https://app.hnry.io/security.txt returns
+  200 with valid RFC 9116 fields — Hnry serves security.txt from the WEB ROOT, not
+  /.well-known/security.txt, which 404s everywhere, so a scanner checking only the standard path
+  scores Hnry as having no disclosure program when it has one; the file is saved verbatim as
+  hnry-security.txt and wired as type SecurityTxt. (2) https://hnry.co.uk/llms.txt returns 200
+  text/plain with a well-formed llms.txt, saved verbatim to llms/hnry-llms.txt and wired as type
+  LLMsTxt; hnry.co.nz and hnry.com.au both 404 that path, so the UK site is the only jurisdiction
+  publishing one.
+hosts:
+- host: hnry.co.nz
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /security.txt
+    status: 301
+    detail: redirects to https://app.hnry.io/security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: hnry.com.au
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /security.txt
+    status: 301
+    detail: redirects to https://app.hnry.io/security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: hnry.co.uk
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /security.txt
+    status: 301
+    detail: redirects to https://uk.hnry.com/security.txt (200, same document)
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/hnry-llms.txt
+- host: app.hnry.io
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /security.txt
+    status: 200
+    file: hnry-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404

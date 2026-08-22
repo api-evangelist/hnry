@@ -1,0 +1,88 @@
+generated: '2026-08-22'
+method: searched
+source: https://hnry.co.nz/pricing/
+docs:
+- https://hnry.co.nz/pricing/
+- https://hnry.com.au/pricing/
+- https://hnry.co.uk/pricing/
+model: usage-based
+note: >-
+  Hnry publishes a single public plan per jurisdiction. There is no subscription tier, no free
+  tier and no enterprise "contact us" tier — the whole commercial model is one percentage fee
+  taken from each inbound payment into the customer's Hnry Account, with an annual cap and a
+  per-payment minimum. The fee is charged only when the customer is paid, and Hnry states it
+  automatically claims its own fee as a deductible business expense on the customer's behalf.
+  Prices below are quoted verbatim from each jurisdiction's pricing page; no API-metered,
+  per-call or developer pricing is published anywhere.
+plan_count: 3
+plans:
+- name: Hnry (New Zealand)
+  jurisdiction: NZ
+  currency: NZD
+  billing_period: per-payment
+  price: 1% + GST of every payment into the Hnry Account
+  rate_percent: 1.0
+  tax_treatment: plus GST
+  annual_cap: 1500
+  annual_cap_note: capped at a maximum of $1,500 + GST per year
+  minimum_fee: 0.50
+  minimum_fee_note: a $0.50 + GST minimum applies to individual payments under $50
+  overage: none
+  included:
+  - Automatic income tax, ACC levy, GST and student loan calculation, deduction and payment to IRD
+  - Tax return filing
+  - Unlimited invoicing and invoice chasing
+  - Expense logging, review and management
+  - Allocations to savings, investments and charities
+  - Business reports
+  - Hnry Business Mastercard
+  - Unlimited access to local sole-trader tax experts
+  source: https://hnry.co.nz/pricing/
+- name: Hnry (Australia)
+  jurisdiction: AU
+  currency: AUD
+  billing_period: per-payment
+  price: 1% + GST from every payment into the Hnry Account
+  rate_percent: 1.0
+  tax_treatment: plus GST
+  annual_cap: 1500
+  annual_cap_note: capped at a maximum of $1,500 + GST per year
+  minimum_fee: 0.50
+  minimum_fee_note: a $0.50 + GST minimum applies to individual payments under $50
+  overage: none
+  included:
+  - Automatic income tax, Medicare levy and GST calculation, deduction and payment to the ATO
+  - Tax return filing
+  - Unlimited invoicing and invoice chasing
+  - Expense logging, review and management
+  - Business reports
+  - Hnry Business Mastercard
+  - Unlimited access to local sole-trader tax experts
+  source: https://hnry.com.au/pricing/
+- name: Hnry (United Kingdom)
+  jurisdiction: UK
+  currency: GBP
+  billing_period: per-payment
+  price: 1% + VAT of self-employed income received through the Hnry Account
+  rate_percent: 1.0
+  tax_treatment: plus VAT
+  annual_cap: 600
+  annual_cap_note: capped at a maximum of £600 + VAT per year
+  minimum_fee: 0.50
+  minimum_fee_note: a £0.50 + VAT minimum applies to individual payments under £50
+  overage: none
+  included:
+  - Automatic Income Tax, National Insurance and VAT calculation, deduction and payment to HMRC
+  - VAT return and Income Tax Self Assessment filing (Making Tax Digital compliant)
+  - Quarterly income and expense updates to HMRC
+  - Unlimited invoices and quotes, plus invoice chasing
+  - Expense logging and management
+  - Allocations to savings, investments, pensions and charities
+  - Business reports
+  - Hnry Business Mastercard
+  - 7 years of digital record keeping as required by HMRC
+  source: https://hnry.co.uk/llms.txt
+api_pricing_published: false
+api_pricing_note: >-
+  No developer/API pricing, quota or metered tier is published. API access is a feature of the
+  customer account rather than a separately priced product.

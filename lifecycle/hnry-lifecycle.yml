@@ -1,0 +1,64 @@
+generated: '2026-08-22'
+method: probed
+source: live probes of Hnry-controlled hosts and the published site map
+note: >-
+  Hnry publishes none of the operational lifecycle surfaces this artifact normally captures. Every
+  row below is a recorded absence with the probe that established it, not an inference. Because
+  there is no status page and no deprecation policy, no `StatusPage` or `Deprecation` pointer is
+  emitted in apis.yml.
+versioning:
+  scheme: unknown
+  policy_published: false
+  note: >-
+    No API version is discoverable. /api/v1 and /v1/openapi.json both 404 on app.hnry.io and the
+    reference is behind HTTP Basic, so neither a URL-path nor a header versioning scheme could be
+    observed.
+deprecation:
+  policy_published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  rfc8594: unknown
+  note: No deprecation or sunset policy exists on any Hnry site; nothing in the site map addresses API change.
+status_page:
+  published: false
+  probes:
+  - url: https://status.hnry.io/
+    status: 0
+    detail: NXDOMAIN
+  - url: https://status.hnry.co.nz/
+    status: 0
+    detail: NXDOMAIN
+  - url: https://hnry.co.nz/status/
+    status: 404
+sla:
+  published: false
+  note: >-
+    The Hnry Service Agreement (https://hnry.co.nz/agreement/, HTTP 200) is a consumer service
+    agreement covering the accounting service. It sets no API availability target, uptime
+    commitment or support-response SLA.
+changelog:
+  published: false
+  note: >-
+    No dated changelog or release-notes page. Product announcements are published as undated
+    marketing articles under https://hnry.co.nz/resources/product/ and
+    https://hnry.co.nz/resources/news/, which is a news feed rather than a change log.
+support:
+- url: https://hnry.co.nz/product/support/
+  status: 200
+  channel: In-app and email support from local tax experts
+- url: https://help.hnry.io/en/
+  status: 200
+  channel: Intercom-hosted help centre
+- url: https://hnry.co.nz/contact/
+  status: 200
+  channel: Contact form
+jurisdictions:
+- code: NZ
+  site: https://hnry.co.nz/
+  app: https://app.hnry.io/
+- code: AU
+  site: https://hnry.com.au/
+  app: https://app.hnry.io/
+- code: UK
+  site: https://hnry.co.uk/
+  app: https://uk.hnry.com/
