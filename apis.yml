@@ -13,6 +13,17 @@ description: >-
   backs the mobile apps and a public Zapier integration; the API reference at app.hnry.io/api-docs
   and the "Developer Platform" workspace page are both credential-gated, so no machine-readable
   contract is published.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://hnry.co.nz/img/social/opengraph.jpg
 url: https://raw.githubusercontent.com/api-evangelist/hnry/refs/heads/main/apis.yml
 x-type: company
