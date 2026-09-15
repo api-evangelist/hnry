@@ -1,18 +1,16 @@
 aid: hnry
 name: Hnry
-description: >-
-  Hnry is a New Zealand-founded financial administration and accounting service for sole traders,
-  contractors and freelancers, operating in New Zealand, Australia and the United Kingdom. Customers
-  are issued a dedicated "Hnry Account" bank account; every payment that lands in it is automatically
-  split — income tax, GST/VAT, ACC levies, Medicare levy and student loan repayments are calculated,
-  deducted and paid to the revenue authority in real time, and the remainder is passed straight
-  through to the customer. On top of that payment rail Hnry runs invoicing, invoice chasing, expense
-  capture and review, allocations to savings/investments/charities, business reporting, tax filing
-  and a Hnry Business Mastercard. Pricing is a single usage-based fee of 1% of each inbound payment
-  plus tax, annually capped. The platform is a Rails application at app.hnry.io with a REST API that
-  backs the mobile apps and a public Zapier integration; the API reference at app.hnry.io/api-docs
-  and the "Developer Platform" workspace page are both credential-gated, so no machine-readable
-  contract is published.
+description: Hnry is a New Zealand-founded financial administration and accounting service for sole traders,
+  contractors and freelancers, operating in New Zealand, Australia and the United Kingdom. Customers are
+  issued a dedicated "Hnry Account" bank account; every payment that lands in it is automatically split
+  — income tax, GST/VAT, ACC levies, Medicare levy and student loan repayments are calculated, deducted
+  and paid to the revenue authority in real time, and the remainder is passed straight through to the
+  customer. On top of that payment rail Hnry runs invoicing, invoice chasing, expense capture and review,
+  allocations to savings/investments/charities, business reporting, tax filing and a Hnry Business Mastercard.
+  Pricing is a single usage-based fee of 1% of each inbound payment plus tax, annually capped. The platform
+  is a Rails application at app.hnry.io with a REST API that backs the mobile apps and a public Zapier
+  integration; the API reference at app.hnry.io/api-docs and the "Developer Platform" workspace page are
+  both credential-gated, so no machine-readable contract is published.
 deliveryModel:
   model: saas
   open_source: false
@@ -73,16 +71,15 @@ tags_raw:
 - Australia
 - United Kingdom
 apis:
-- aid: hnry-platform-api
+- aid: hnry:hnry-platform-api
   name: Hnry Platform API
-  description: >-
-    The REST API behind the Hnry app. It backs the Hnry iOS/Android clients and the published Hnry
-    Zapier integration, which exposes create/find operations over clients, invoices, invoice line
+  description: 'The REST API behind the Hnry app. It backs the Hnry iOS/Android clients and the published
+    Hnry Zapier integration, which exposes create/find operations over clients, invoices, invoice line
     items and expenses. The reference is served by the platform itself at https://app.hnry.io/api-docs
-    but returns HTTP 401 with a WWW-Authenticate: Basic challenge to anonymous callers, and the
-    "Developer Platform" page Hnry links from its own short domain (https://on.hnry.co.nz/api-docs)
-    resolves to a Notion workspace page that is not publicly shared. No OpenAPI, Swagger, GraphQL SDL
-    or AsyncAPI document is published at any Hnry-controlled host.
+    but returns HTTP 401 with a WWW-Authenticate: Basic challenge to anonymous callers, and the "Developer
+    Platform" page Hnry links from its own short domain (https://on.hnry.co.nz/api-docs) resolves to a
+    Notion workspace page that is not publicly shared. No OpenAPI, Swagger, GraphQL SDL or AsyncAPI document
+    is published at any Hnry-controlled host.'
   humanURL: https://app.hnry.io/api-docs
   baseURL: https://app.hnry.io
   tags:
