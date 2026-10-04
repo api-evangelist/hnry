@@ -50,7 +50,7 @@ tags:
 - Payments
 - Invoicing
 - Expense Management
-- Financial-Services
+- Financial Services
 - Sole Traders
 - Payroll
 - Fintech
@@ -70,6 +70,7 @@ tags_raw:
 - New Zealand
 - Australia
 - United Kingdom
+- Financial-Services
 apis:
 - aid: hnry:hnry-platform-api
   name: Hnry Platform API
