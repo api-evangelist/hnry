@@ -86,3 +86,28 @@ api_pricing_published: false
 api_pricing_note: >-
   No developer/API pricing, quota or metered tier is published. API access is a feature of the
   customer account rather than a separately priced product.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  units: []
+  plans:
+  - name: Hnry (New Zealand)
+    access: other
+    model: metered
+    model_how: derived
+    units: []
+    periods: []
+  - name: Hnry (Australia)
+    access: other
+    model: metered
+    model_how: derived
+    units: []
+    periods: []
+  - name: Hnry (United Kingdom)
+    access: other
+    model: metered
+    model_how: derived
+    units: []
+    periods: []
