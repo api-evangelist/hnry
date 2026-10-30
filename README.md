@@ -64,20 +64,105 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Hnry is a New Zealand-founded financial administration and accounting service for sole traders,
-contractors and freelancers, operating in New Zealand, Australia and the United Kingdom. Customers
-are paid into a dedicated Hnry Account; every inbound payment is automatically split, with income
-tax, GST/VAT, ACC levies, Medicare levy and student loan repayments calculated, deducted and paid to
-the revenue authority in real time. Invoicing, expense capture, allocations, reporting, tax filing
-and a Hnry Business Mastercard sit on top of that rail.
+Hnry is a New Zealand-founded financial administration and accounting service for sole traders, contractors and freelancers, operating in New Zealand, Australia and the United Kingdom. Customers are issued a dedicated "Hnry Account" bank account; every payment that lands in it is automatically split — income tax, GST/VAT, ACC levies, Medicare levy and student loan repayments are calculated, deducted and paid to the revenue authority in real time, and the remainder is passed straight through to the customer. On top of that payment rail Hnry runs invoicing, invoice chasing, expense capture and review, allocations to savings/investments/charities, business reporting, tax filing and a Hnry Business Mastercard. Pricing is a single usage-based fee of 1% of each inbound payment plus tax, annually capped. The platform is a Rails application at app.hnry.io with a REST API that backs the mobile apps and a public Zapier integration; the API reference at app.hnry.io/api-docs and the "Developer Platform" workspace page are both credential-gated, so no machine-readable contract is published.
 
-- https://hnry.co.nz/
-- https://hnry.com.au/
-- https://hnry.co.uk/
-- https://app.hnry.io/
+**Areas:** Accounting · Tax · Payments · Invoicing · Expense Management · Financial Services · Sole Traders · Payroll · Fintech · New Zealand · Australia · United Kingdom
 
-Hnry's API is real but not publicly documented: the reference at `https://app.hnry.io/api-docs`
-answers HTTP 401 with an HTTP Basic challenge, and the "Developer Platform" page Hnry links from its
-own short domain resolves to a Notion page that is not shared publicly. No OpenAPI, Swagger, GraphQL
-SDL or AsyncAPI document is published at any Hnry-controlled host. The only publicly enumerable
-operations are the eight actions and searches in Hnry's first-party Zapier app.
+## Hnry on APIs.io
+
+Everything profiled for Hnry is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hnry/](https://apis.io/providers/hnry/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Hnry Platform API](https://apis.io/apis/hnry/hnry-platform-api/) — The REST API behind the Hnry app. It backs the Hnry iOS/Android clients and the published Hnry Zapier integration, which exposes create/find operations over…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Hnry Authentication](https://apis.io/security/hnry/hnry-authentication/)
+- [Hnry Domain Security](https://apis.io/security/hnry/hnry-domain-security/)
+- [Hnry Trust Center](https://apis.io/security/hnry/hnry-trust-center/)
+- [Hnry Vulnerability Disclosure](https://apis.io/security/hnry/hnry-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Hnry Plans Pricing](https://apis.io/plans/hnry/hnry-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Hnry Rate Limits](https://apis.io/rate-limits/hnry/hnry-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://hnry.co.nz/)
+- [Pricing](https://hnry.co.nz/pricing/)
+- [Sign up](https://app.hnry.io/signup/jurisdiction_selection)
+- [Support](https://hnry.co.nz/product/support/)
+- [Blog](https://hnry.co.nz/resources/news/)
+- [Terms of service](https://hnry.co.nz/agreement/)
+- [Privacy policy](https://hnry.co.nz/privacy/)
+- [GitHub](https://github.com/HnryNZ)
+
+## API Evangelist rating
+
+**Kin Score 35.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 92.1 |
+
+**Agent readiness 5.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 32.1** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hnry/](https://apis.io/providers/hnry/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Hnry: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hnry/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
